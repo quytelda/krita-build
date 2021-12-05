@@ -29,7 +29,9 @@ RUN pacman -Syu --noconfirm \
 	      kitemviews \
 	      kseexpr \
 	      libheif \
+	      libmypaint \
 	      libraw \
+	      libwebp \
 	      opencolorio \
 	      openexr \
 	      openjpeg2 \
