@@ -25,13 +25,4 @@ function package() {
     cmake --install "$BUILD_DIR"
 }
 
-function dir_is_empty() {
-    test -n "$(find ${1} -maxdepth 0 -empty)"
-}
-
-# Skip configuration if the build directory is already full.
-# This assumes configuration was done previously.
-dir_is_empty "$BUILD_DIR" && configure
-
-build
-package
+configure && build && package
