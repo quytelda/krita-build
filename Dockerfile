@@ -58,6 +58,13 @@ ENV BUILD_DIR=/krita/build
 ENV STAGING_DIR=/krita/install
 ENV INSTALL_DIR=/usr/local
 
+# Compiler/Linker flags
+ENV CFLAGS="-march=native -mtune=native -O2 -pipe -fno-plt -fexceptions \
+            -Wp,-D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security \
+            -fstack-clash-protection -fcf-protection"
+ENV CXXFLAGS="$CFLAGS -Wp,-D_GLIBCXX_ASSERTIONS"
+ENV LDFLAGS="-Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now"
+
 VOLUME /krita/src
 VOLUME /krita/build
 VOLUME /krita/install
