@@ -18,5 +18,4 @@ podman run -it \
        \
        --env RUNTIME_PREFIX="$KRITA_INSTALL" \
        \
-       --entrypoint=/bin/bash \
        localhost/krita-build
