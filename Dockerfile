@@ -53,8 +53,8 @@ WORKDIR /krita
 # Build Environment
 ENV SRC_DIR=/krita/src
 ENV BUILD_DIR=/krita/build
-ENV INSTALL_DIR=/krita/install
-ENV RUNTIME_PREFIX="/usr/local"
+ENV STAGING_DIR=/krita/install
+ENV INSTALL_DIR=/usr/local
 
 VOLUME /krita/src
 VOLUME /krita/build
