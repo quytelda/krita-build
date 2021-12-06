@@ -58,6 +58,11 @@ ENV BUILD_DIR=/krita/build
 ENV STAGING_DIR=/krita/install
 ENV INSTALL_DIR=/usr/local
 
+# Build Settings
+ENV BUILD_TESTING=OFF
+ENV BUILD_KRITA_QT_DESIGNER_PLUGINS=ON
+ENV CMAKE_BUILD_TYPE=Release
+
 # Compiler/Linker flags
 ENV CFLAGS="-march=native -mtune=native -O2 -pipe -fno-plt -fexceptions \
             -Wp,-D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security \
