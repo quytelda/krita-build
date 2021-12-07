@@ -13,7 +13,7 @@ function configure() {
 }
 
 function build() {
-    cmake --build "$BUILD_DIR" --parallel "$(nproc)"
+    cmake --build "$BUILD_DIR" --parallel "${JOBS:-$(nproc)}"
 }
 
 function package() {
