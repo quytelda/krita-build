@@ -77,7 +77,8 @@ ENV BUILD_KRITA_QT_DESIGNER_PLUGINS=ON
 ENV CMAKE_BUILD_TYPE=Release
 
 # Compiler/Linker flags
-ENV CFLAGS="-march=native -mtune=native -O2 -pipe -fno-plt -fexceptions \
+# Taken from the default x86-64 flags in /etc/makepkg.conf
+ENV CFLAGS="-march=x86-64 -mtune=generic -O2 -pipe -fno-plt -fexceptions \
             -Wp,-D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security \
             -fstack-clash-protection -fcf-protection"
 ENV CXXFLAGS="$CFLAGS -Wp,-D_GLIBCXX_ASSERTIONS"
