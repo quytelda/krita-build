@@ -46,8 +46,8 @@ RUN pacman -Syu --noconfirm \
     && pacman -Scc --noconfirm
 
 # Build Script
-COPY build.sh /usr/local/bin/
-ENTRYPOINT ["/usr/local/bin/build.sh"]
+COPY entrypoint.sh /usr/local/bin/
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 
 USER 1000:1000
 WORKDIR /krita
