@@ -1,3 +1,6 @@
+This repository describes a podman/docker container that can simplify
+building [Krita](https://krita.org) from source.
+
 # Usage
 First, you'll need a copy of the Krita source tree. You can get this
 from the Krita website: https://krita.org/en/download/krita-desktop
@@ -22,9 +25,15 @@ podman run -it \
        --userns=keep-id \
        localhost/krita-build
 ```
+The `INSTALL_DIR` variable should contain the path where Krita will be
+installed and run from. This means the final executable should end up
+at "$INSTALL_DIR/bin/krita".
 
 After the build finishes, you should be able to run Krita:
 
 ```
 ./install/bin/krita
 ```
+
+Invoking podman by hand is a bit of work, so there's also a `run.sh`
+script to make this easier.
