@@ -36,6 +36,7 @@ WORKDIR /krita
 ENV INSTALL_DIR=/usr/local
 
 # The following variables represent paths *inside* the container.
+# You probably don't want to change these.
 # SRC_DIR is the path where the Krita source tree is mounted.
 # BUILD_DIR is a path where the build cache may be mounted.
 # STAGING_DIR is the path where CMake will install Krita after building.
