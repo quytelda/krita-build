@@ -50,7 +50,7 @@ VOLUME "$STAGING_DIR"
 # Build Options
 # https://docs.krita.org/en/untranslatable_pages/cmake_settings_for_developers.html
 ENV BUILD_TESTING=OFF
-ENV BUILD_KRITA_QT_DESIGNER_PLUGINS=ON
+ENV BUILD_KRITA_QT_DESIGNER_PLUGINS=OFF
 ENV CMAKE_BUILD_TYPE=Release
 
 # Compiler/Linker flags
