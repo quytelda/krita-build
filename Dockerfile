@@ -1,4 +1,4 @@
-FROM docker.io/library/archlinux:base-devel
+FROM docker.io/library/fedora:35
 
 # Create a user/group to run the build.
 RUN groupadd --gid 1000 krita \
@@ -9,41 +9,18 @@ RUN groupadd --gid 1000 krita \
 	       --no-log-init \
 	       krita
 
-# Install dependancies
-RUN pacman -Syu --noconfirm \
-    && pacman -S --needed --noconfirm \
-	      boost \
-	      eigen \
-	      exiv2 \
-	      extra-cmake-modules \
-	      fftw \
-	      giflib \
-	      gsl \
-	      hicolor-icon-theme \
-	      kcompletion \
-	      kcrash \
-	      kdoctools \
-	      kguiaddons \
-	      ki18n \
-	      kitemmodels \
-	      kitemviews \
-	      kseexpr \
-	      libheif \
-	      libmypaint \
-	      libraw \
-	      libwebp \
-	      opencolorio \
-	      openexr \
-	      openjpeg2 \
-	      poppler-qt5 \
-	      python-pyqt5 \
-	      qt5-multimedia \
-	      qt5-svg \
-	      qt5-tools \
-	      quazip \
-	      sip \
-	      vc \
-    && pacman -Scc --noconfirm
+# Install build tools.
+RUN dnf upgrade -y \
+    && dnf install -y \
+           dnf-plugins-core \
+    && dnf clean all
+
+# Install Krita build dependencies.
+RUN dnf builddep -y krita \
+    && dnf install -y libwebp-devel \
+	   openjpeg2-devel \
+	   libmypaint-devel \
+    && dnf clean all
 
 # Build Script
 COPY entrypoint.sh /usr/local/bin/
