@@ -9,17 +9,14 @@ RUN groupadd --gid 1000 krita \
 	       --no-log-init \
 	       krita
 
-# Install build tools.
+# Install build tools and dependencies.
 RUN dnf upgrade -y \
     && dnf install -y \
-           dnf-plugins-core \
-    && dnf clean all
-
-# Install Krita build dependencies.
-RUN dnf builddep -y krita \
-    && dnf install -y libwebp-devel \
-	   openjpeg2-devel \
 	   libmypaint-devel \
+	   libwebp-devel \
+	   openjpeg2-devel \
+	   dnf-plugins-core \
+    && dnf builddep -y krita \
     && dnf clean all
 
 # Build Script
