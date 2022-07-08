@@ -18,4 +18,4 @@ podman run -it \
        \
        --env INSTALL_DIR="$KRITA_INSTALL" \
        \
-       localhost/krita-build
+       localhost/krita-build:f35
