@@ -12,9 +12,9 @@ podman run -it \
        --name=krita \
        --userns=keep-id \
        \
-       --mount type=bind,src="$KRITA_SRC",dst=/krita/src \
-       --mount type=bind,src="$KRITA_BUILD",dst=/krita/build \
-       --mount type=bind,src="$KRITA_INSTALL",dst=/krita/install \
+       --mount type=bind,relabel=private,src="$KRITA_SRC",dst=/krita/src \
+       --mount type=bind,relabel=private,src="$KRITA_BUILD",dst=/krita/build \
+       --mount type=bind,relabel=private,src="$KRITA_INSTALL",dst=/krita/install \
        \
        --env INSTALL_DIR="$KRITA_INSTALL" \
        \
