@@ -16,6 +16,7 @@ RUN dnf upgrade -y \
 	   libwebp-devel \
 	   openjpeg2-devel \
 	   dnf-plugins-core \
+	   xsimd-devel \
     && dnf builddep -y krita \
     && dnf clean all
 
