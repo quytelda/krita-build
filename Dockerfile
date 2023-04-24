@@ -16,8 +16,8 @@ RUN pacman -Syu --noconfirm \
 	      eigen \
 	      exiv2 \
 	      extra-cmake-modules \
+	      ffmpeg \
 	      fftw \
-	      giflib \
 	      gsl \
 	      hicolor-icon-theme \
 	      kcompletion \
@@ -25,10 +25,12 @@ RUN pacman -Syu --noconfirm \
 	      kdoctools \
 	      kguiaddons \
 	      ki18n \
+	      kimageformats \
 	      kitemmodels \
 	      kitemviews \
 	      kseexpr \
 	      libheif \
+	      libjxl \
 	      libmypaint \
 	      libraw \
 	      libwebp \
@@ -42,7 +44,7 @@ RUN pacman -Syu --noconfirm \
 	      qt5-tools \
 	      quazip \
 	      sip \
-	      vc \
+	      xsimd \
     && pacman -Scc --noconfirm
 
 # Build Script
