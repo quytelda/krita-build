@@ -77,6 +77,7 @@ VOLUME "$STAGING_DIR"
 ENV BUILD_TESTING=OFF
 ENV BUILD_KRITA_QT_DESIGNER_PLUGINS=ON
 ENV CMAKE_BUILD_TYPE=Release
+ENV KRITA_DEVS=OFF
 
 # Compiler/Linker flags
 # Taken from the default x86-64 flags in /etc/makepkg.conf
