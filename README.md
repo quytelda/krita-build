@@ -18,16 +18,16 @@ build Krita with the default options:
 
 ```
 podman run -it \
-       --env INSTALL_DIR="$PWD/install" \
+       --env CMAKE_INSTALL_PREFIX="$PWD/install" \
        --mount type=bind,src="$PWD/src",dst=/krita/src \
        --mount type=bind,src="$PWD/build",dst=/krita/build \
        --mount type=bind,src="$PWD/install",dst=/krita/install \
        --userns=keep-id \
        localhost/krita-build
 ```
-The `INSTALL_DIR` variable should contain the path where Krita will be
+The `CMAKE_INSTALL_PREFIX` variable should contain the path where Krita will be
 installed and run from. This means the final executable should end up
-at "$INSTALL_DIR/bin/krita".
+at "$CMAKE_INSTALL_PREFIX/bin/krita".
 
 After the build finishes, you should be able to run Krita:
 

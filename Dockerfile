@@ -56,21 +56,21 @@ WORKDIR /krita
 
 # Build Environment
 
-# INSTALL_DIR must match the path where Krita will be installed on the host.
-# This means the final executable should be at "$INSTALL_DIR/bin/krita".
-ENV INSTALL_DIR=/usr/local
+# CMAKE_INSTALL_PREFIX must match the path where Krita will be installed on the host.
+# This means the final executable should be at "$CMAKE_INSTALL_PREFIX/bin/krita".
+ENV CMAKE_INSTALL_PREFIX=/usr/local
 
 # The following variables represent paths *inside* the container.
 # SRC_DIR is the path where the Krita source tree is mounted.
 # BUILD_DIR is a path where the build cache may be mounted.
-# STAGING_DIR is the path where CMake will install Krita after building.
+# CMAKE_STAGING_PREFIX is the path where CMake will install Krita after building.
 ENV SRC_DIR=/krita/src
 ENV BUILD_DIR=/krita/build
-ENV STAGING_DIR=/krita/install
+ENV CMAKE_STAGING_PREFIX=/krita/install
 
 VOLUME "$SRC_DIR"
 VOLUME "$BUILD_DIR"
-VOLUME "$STAGING_DIR"
+VOLUME "$CMAKE_STAGING_PREFIX"
 
 # Build Options
 # https://docs.krita.org/en/untranslatable_pages/cmake_settings_for_developers.html

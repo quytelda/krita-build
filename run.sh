@@ -16,6 +16,6 @@ podman run -it \
        --mount type=bind,src="$KRITA_BUILD",dst=/krita/build \
        --mount type=bind,src="$KRITA_INSTALL",dst=/krita/install \
        \
-       --env INSTALL_DIR="$KRITA_INSTALL" \
+       --env CMAKE_INSTALL_PREFIX="$KRITA_INSTALL" \
        \
        localhost/krita-build
